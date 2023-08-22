@@ -1,0 +1,10 @@
+.speedo-wrap {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.speedo-digits {
+  transition: 1s all;
+  transition-timing-function: cubic-bezier(0, 0.99, 1, 1.01);
+}

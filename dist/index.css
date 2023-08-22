@@ -1,0 +1,70 @@
+._RollingMeter__techo-wrap__1RdTA {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  /* border: 2px solid blue; */
+}
+
+._RollingMeter__techo-digits__1NGEq {
+  margin-right: 2rem;
+  transition: 1s all;
+  transition-timing-function: cubic-bezier(0, 0.99, 1, 1.01);
+  /* animation: mymove 10s infinite; */
+  /* background-color: blue; */
+  transform-style: preserve-3d;
+}
+
+._RollingMeter__techo-digit__2lNIy {
+  position: absolute;
+  /* transform-origin: 0rem 0em 5rem; */
+  /* background-color: red; */
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+@keyframes _RollingMeter__mymove__1SwaE {
+  0% {
+    transform: rotateX(0deg);
+  }
+  10% {
+    transform: rotateX(-36deg);
+  }
+  20% {
+    transform: rotateX(-72deg);
+  }
+  30% {
+    transform: rotateX(-108deg);
+  }
+  40% {
+    transform: rotateX(-144deg);
+  }
+  50% {
+    transform: rotateX(-180deg);
+  }
+  60% {
+    transform: rotateX(-216deg);
+  }
+  70% {
+    transform: rotateX(-252deg);
+  }
+  80% {
+    transform: rotateX(-288deg);
+  }
+  90% {
+    transform: rotateX(-324deg);
+  }
+  100% {
+    transform: rotateX(-0deg);
+  }
+}
+
+._ShiftingMeter__speedo-wrap__2J0Sd {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+._ShiftingMeter__speedo-digits__2ZrgR {
+  transition: 1s all;
+  transition-timing-function: cubic-bezier(0, 0.99, 1, 1.01);
+}
