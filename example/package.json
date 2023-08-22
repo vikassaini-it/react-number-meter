@@ -24,7 +24,8 @@
     "@babel/plugin-syntax-object-rest-spread": "^7.8.3",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-normalize": "^10.0.1",
-    "postcss-preset-env": "^9.1.1"
+    "postcss-preset-env": "^9.1.1",
+    "react-scripts": "^5.0.1"
   },
   "browserslist": [
     ">0.2%",
