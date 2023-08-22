@@ -18,7 +18,6 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-meter": "file:..",
-    "react-scripts": "file:../node_modules/react-scripts"
   },
   "devDependencies": {
     "@babel/plugin-syntax-object-rest-spread": "^7.8.3",
