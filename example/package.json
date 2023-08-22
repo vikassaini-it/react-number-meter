@@ -17,7 +17,7 @@
     "bootstrap": "^5.3.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-meter": "file:..",
+    "react-meter": "file:.."
   },
   "devDependencies": {
     "@babel/plugin-syntax-object-rest-spread": "^7.8.3",
