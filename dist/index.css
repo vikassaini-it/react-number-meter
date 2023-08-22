@@ -1,11 +1,11 @@
-._RollingMeter__techo-wrap__1RdTA {
+._1RdTA {
   display: flex;
   justify-content: center;
   overflow: hidden;
   /* border: 2px solid blue; */
 }
 
-._RollingMeter__techo-digits__1NGEq {
+._1NGEq {
   margin-right: 2rem;
   transition: 1s all;
   transition-timing-function: cubic-bezier(0, 0.99, 1, 1.01);
@@ -14,7 +14,7 @@
   transform-style: preserve-3d;
 }
 
-._RollingMeter__techo-digit__2lNIy {
+._2lNIy {
   position: absolute;
   /* transform-origin: 0rem 0em 5rem; */
   /* background-color: red; */
@@ -22,7 +22,7 @@
   transform-style: preserve-3d;
 }
 
-@keyframes _RollingMeter__mymove__1SwaE {
+@keyframes _1SwaE {
   0% {
     transform: rotateX(0deg);
   }
@@ -58,13 +58,13 @@
   }
 }
 
-._ShiftingMeter__speedo-wrap__2J0Sd {
+._2J0Sd {
   display: flex;
   justify-content: center;
   overflow: hidden;
 }
 
-._ShiftingMeter__speedo-digits__2ZrgR {
+._2ZrgR {
   transition: 1s all;
   transition-timing-function: cubic-bezier(0, 0.99, 1, 1.01);
 }

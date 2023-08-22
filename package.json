@@ -50,7 +50,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^5.0.1",
-    "sass": "^1.66.1"
+    "sass": "^1.66.1",
+    "source-map-generator": "^0.8.0"
   },
   "files": [
     "dist"
