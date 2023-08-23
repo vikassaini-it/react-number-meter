@@ -11,7 +11,7 @@ import { Slider } from "@mui/material";
 const App = () => {
   const [value, setValue] = useState(100000);
   const [duration, setDuration] = useState(1000);
-  const [size, setSize] = useState(1);
+  const [size, setSize] = useState(3);
   return (
     <div
       style={{
