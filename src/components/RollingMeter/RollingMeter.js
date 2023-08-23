@@ -13,21 +13,24 @@ export default function RollingMeter({
   useEffect(() => {
     const localRot = JSON.parse(JSON.stringify(rotVal));
     (value + "").split("").forEach((val, idx) => {
-      if (!localRot[(value + "").split("").length - idx]) {
-        localRot[(value + "").split("").length - idx] = { v: 0, r: 0 };
+      if (!localRot[idx]) {
+        localRot[idx] = { v: 0, r: 0 };
       }
-      localRot[(value + "").split("").length - idx]["r"] =
-        localRot[(value + "").split("").length - idx]["r"] +
+      localRot[idx]["r"] =
+        localRot[idx]["r"] +
         36 *
-          (((parseInt(val, 10) -
-            localRot[(value + "").split("").length - idx]["v"] +
-            9) %
-            9) +
-            (parseInt(val, 10) <
-            localRot[(value + "").split("").length - idx]["v"]
-              ? 1
-              : 0));
-      localRot[(value + "").split("").length - idx]["v"] = parseInt(val, 10);
+          (((parseInt(val, 10) - localRot[idx]["v"] + 9) % 9) +
+            (parseInt(val, 10) < localRot[idx]["v"] ? 1 : 0));
+      // let tempRot =
+      //   localRot[idx]["r"] +
+      //   36 *
+      //     (((parseInt(val, 10) - localRot[idx]["v"] + 9) % 9) +
+      //       (parseInt(val, 10) < localRot[idx]["v"] ? 1 : 0));
+      // while (tempRot < localRot[idx]["r"]) {
+      //   tempRot += 360;
+      // }
+      // localRot[idx]["r"] = tempRot;
+      localRot[idx]["v"] = parseInt(val, 10);
     });
     setRotVal(localRot);
   }, [value]);
@@ -40,14 +43,12 @@ export default function RollingMeter({
       {(value + "").split("").map((val, idx) => (
         <div
           className={styles["techo-digits"]}
-          key={(value + "").split("").length - idx + val}
+          key={idx}
           style={{
             color: color,
             fontFamily: fontFamily,
             transform: `rotateX( ${
-              (rotVal[(value + "").split("").length - idx]
-                ? rotVal[(value + "").split("").length - idx]["r"]
-                : 0) * -1
+              (rotVal[idx] ? rotVal[idx]["r"] : 0) * -1
             }deg ) `,
             transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
             transitionProperty: `all`,
