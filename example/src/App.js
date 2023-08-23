@@ -53,12 +53,15 @@ const App = () => {
           >
             <RemoveIcon />
           </IconButton>
-          <Button
-            variant="outlined"
-            onClick={() => setValue(Math.floor(Math.random() * 1000001))}
-          >
-            Random Value
-          </Button>
+          <div className="d-flex flex-column align-items-center">
+            <Button
+              variant="outlined"
+              onClick={() => setValue(Math.floor(Math.random() * 1000001))}
+            >
+              Random Value
+            </Button>
+            <span>{value}</span>
+          </div>
           <IconButton
             aria-label="reduce"
             onClick={() => {
