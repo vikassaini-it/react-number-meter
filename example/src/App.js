@@ -20,7 +20,7 @@ const App = () => {
       }}
       className="d-flex flex-column align-items-center"
     >
-      <h1 style={{ fontSize: "3rem" }}>REACT METER</h1>
+      <h1 style={{ fontSize: "3rem" }}>REACT NUMBER METER</h1>
       <div className="w-100 row">
         <div className="col-12 col-md-6 d-flex justify-content-center flex-column align-items-center">
           <h2>SHIFTING METER</h2>
@@ -33,6 +33,18 @@ const App = () => {
             duration={duration}
             size={`${size}rem`}
           />
+          <code
+            className="mt-3 p-3"
+            style={{ backgroundColor: "black", color: "white", borderRadius: "10px"}}
+          >
+            {`
+              <ShiftingMeter 
+                value={\`${value}\`}
+                duration={\`${duration}ms\`}
+                size={\`${size}rem\`} 
+              />
+            `}
+          </code>
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center flex-column align-items-center">
           <h2>ROLLING METER</h2>
@@ -41,6 +53,18 @@ const App = () => {
             to top
           </p>
           <RollingMeter value={value} duration={duration} size={`${size}rem`} />
+          <code
+            className="mt-3 p-3"
+            style={{ backgroundColor: "black", color: "white", borderRadius: "10px"}}
+          >
+            {`
+              <RollingMeter 
+                value={\`${value}\`}
+                duration={\`${duration}ms\`}
+                size={\`${size}rem\`} 
+              />
+            `}
+          </code>
         </div>
       </div>
       <div className="w-100 row mt-5">
