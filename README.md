@@ -1,30 +1,33 @@
-# react-meter
+# React Meter
 
-> React Counter/Meter
+React Implementation of Styled number representation
 
-[![NPM](https://img.shields.io/npm/v/react-meter.svg)](https://www.npmjs.com/package/react-meter) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+## Authors
 
-## Install
+- [Github@vikassaini-it](https://github.com/vikassaini-it)
+- [Vikas Saini](https://vikassaini.info)
 
-```bash
-npm install --save react-meter
-```
+## Demo
 
-## Usage
+[Live Demo](https://reactmeter.vikassaini.info)
 
-```jsx
-import React, { Component } from 'react'
+## Screenshots
 
-import MyComponent from 'react-meter'
-import 'react-meter/dist/index.css'
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2prc3FvZHB3ZGJieDJuc2dzY211dTczaWI4bTZueHRzZGNncXdlOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dQbyic9cGMSMudv0mr/giphy.gif)
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTY0aDZoYTUxMWRkbHJxMjNuMnlheG5weXgyZ2l6cHhmemJyN2E0MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RZZOIXUgzGMxXEtdjh/giphy.gif)
+
+## Usage/Examples
+
+```javascript
+import { RollingMeter, ShiftingMeter } from "react-meter";
+
+function App() {
+  return (
+    <>
+      <ShiftingMeter value={5483343} duration={500} size={`3rem`} />
+      <RollingMeter value={872542} duration={1000} size={`3rem`} />
+    </>
+  );
 }
 ```
-
-## License
-
- © [vikassaini-it](https://github.com/vikassaini-it)
