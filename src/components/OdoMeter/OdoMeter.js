@@ -23,8 +23,9 @@ export default function OdoMeter({
           parseInt(val, 10)
         );
         const rotationDir = value > previousVal;
-        let totalRotation =
-          36 * distance + (idx > 0 ? localRot[idx - 1]["d"] * 360 : 0);
+        let totalRotation = 36 * distance;
+        totalRotation +=
+          idx > 0 ? (localRot[idx - 1]["d"] + distance) * 360 : 0;
         // totalRotation = totalRotation * (rotationDir ? 1 : -1);
         localRot[idx]["r"] = localRot[idx]["r"] + totalRotation;
         localRot[idx]["v"] = parseInt(val, 10);
