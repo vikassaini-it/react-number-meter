@@ -34,7 +34,7 @@ export default function RollingMeter({
       {(value + "").split("").map((val, idx) => (
         <div
           className={styles["techo-digits"]}
-          key={idx}
+          key={idx + val}
           style={{
             color: color,
             fontFamily: fontFamily,
