@@ -1,6 +1,7 @@
-import React from 'react'
+import React from "react";
 
-import RollingMeter from './components/RollingMeter/RollingMeter'
-import ShiftingMeter from './components/ShiftingMeter/ShiftingMeter'
+import RollingMeter from "./components/RollingMeter/RollingMeter";
+import ShiftingMeter from "./components/ShiftingMeter/ShiftingMeter";
+import OdoMeter from "./components/OdoMeter/OdoMeter";
 
-export { RollingMeter, ShiftingMeter }
+export { RollingMeter, ShiftingMeter, OdoMeter };

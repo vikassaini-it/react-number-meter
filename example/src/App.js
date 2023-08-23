@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { RollingMeter, ShiftingMeter } from "react-meter";
+import { OdoMeter, RollingMeter, ShiftingMeter } from "react-meter";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import AddIcon from "@mui/icons-material/Add";
@@ -22,7 +22,7 @@ const App = () => {
     >
       <h1 style={{ fontSize: "3rem" }}>REACT NUMBER METER</h1>
       <div className="w-100 row">
-        <div className="col-12 col-md-6 d-flex justify-content-center flex-column align-items-center">
+        <div className="col-12 col-md-4 d-flex justify-content-center flex-column align-items-center">
           <h2>SHIFTING METER</h2>
           <p className="w-50 text-center">
             This is a shifting meter which always shifts in both direction
@@ -35,7 +35,11 @@ const App = () => {
           />
           <code
             className="mt-3 p-3"
-            style={{ backgroundColor: "black", color: "white", borderRadius: "10px"}}
+            style={{
+              backgroundColor: "black",
+              color: "white",
+              borderRadius: "10px",
+            }}
           >
             {`
               <ShiftingMeter 
@@ -46,7 +50,7 @@ const App = () => {
             `}
           </code>
         </div>
-        <div className="col-12 col-md-6 d-flex justify-content-center flex-column align-items-center">
+        <div className="col-12 col-md-4 d-flex justify-content-center flex-column align-items-center">
           <h2>ROLLING METER</h2>
           <p className="w-50 text-center">
             This is a rolling meter which always rolls in one direction, bottom
@@ -55,10 +59,37 @@ const App = () => {
           <RollingMeter value={value} duration={duration} size={`${size}rem`} />
           <code
             className="mt-3 p-3"
-            style={{ backgroundColor: "black", color: "white", borderRadius: "10px"}}
+            style={{
+              backgroundColor: "black",
+              color: "white",
+              borderRadius: "10px",
+            }}
           >
             {`
               <RollingMeter 
+                value={\`${value}\`}
+                duration={\`${duration}ms\`}
+                size={\`${size}rem\`} 
+              />
+            `}
+          </code>
+        </div>
+        <div className="col-12 col-md-4 d-flex justify-content-center flex-column align-items-center">
+          <h2>ODO METER</h2>
+          <p className="w-50 text-center">
+            This is a odo meter which rolls like a real odometer
+          </p>
+          <OdoMeter value={value} duration={duration} size={`${size}rem`} />
+          <code
+            className="mt-3 p-3"
+            style={{
+              backgroundColor: "black",
+              color: "white",
+              borderRadius: "10px",
+            }}
+          >
+            {`
+              <OdoMeter 
                 value={\`${value}\`}
                 duration={\`${duration}ms\`}
                 size={\`${size}rem\`} 
