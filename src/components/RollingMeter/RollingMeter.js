@@ -53,6 +53,7 @@ export default function RollingMeter({
             transitionProperty: `all`,
             transitionDuration: `${duration}ms`,
             position: "relative",
+            marginRight: `calc( ${size} - 1rem )`,
           }}
         >
           <div
