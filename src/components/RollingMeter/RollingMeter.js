@@ -12,21 +12,28 @@ export default function RollingMeter({
   const [rotValBk, setRotValBk] = useState([]);
 
   useEffect(() => {
-    const localRot = JSON.parse(JSON.stringify(rotVal));
-    setRotValBk(JSON.parse(JSON.stringify(rotVal)));
-    (value + "").split("").forEach((val, idx) => {
-      if (!localRot[idx]) {
-        localRot[idx] = { v: 0, r: 0 };
-      }
-      localRot[idx]["r"] =
-        localRot[idx]["r"] +
-        36 *
-          (((parseInt(val, 10) - localRot[idx]["v"] + 9) % 9) +
-            (parseInt(val, 10) < localRot[idx]["v"] ? 1 : 0));
-      localRot[idx]["v"] = parseInt(val, 10);
+    setRotVal((prevVal) => {
+      const localRot = JSON.parse(JSON.stringify(prevVal));
+      setRotValBk(JSON.parse(JSON.stringify(prevVal)));
+      (value + "").split("").forEach((val, idx) => {
+        if (!localRot[idx]) {
+          localRot[idx] = { v: 0, r: 0 };
+        }
+        localRot[idx]["r"] =
+          localRot[idx]["r"] +
+          36 * calculateDistance(localRot[idx]["v"], parseInt(val, 10));
+        // (((parseInt(val, 10) - localRot[idx]["v"] + 9) % 9) +
+        //   (parseInt(val, 10) < localRot[idx]["v"] ? 1 : 0));
+        localRot[idx]["v"] = parseInt(val, 10);
+      });
+      return localRot;
     });
-    setRotVal(localRot);
   }, [value]);
+
+  const calculateDistance = (num1, num2) => {
+    const distance = (num2 - num1 + 10) % 10;
+    return distance;
+  };
 
   return (
     <div
@@ -152,14 +159,14 @@ export default function RollingMeter({
               9
             </div>
           </div>
-          <div
+          {/* <div
             style={{
               fontSize: "14px",
               color: `${rotVal[idx]?.r < rotValBk[idx]?.r ? "red" : "black"}`,
             }}
           >
             {rotValBk[idx]?.r + ":" + rotVal[idx]?.r}
-          </div>
+          </div> */}
         </React.Fragment>
       ))}
     </div>
