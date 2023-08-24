@@ -2,6 +2,7 @@
 
 React Implementation of Styled number representation
 
+![](https://komarev.com/ghpvc/?username=vikassaini-it-react-number-meter)
 ![doge](https://i.imgflip.com/7wmyjy.jpg)
 
 ## Authors
@@ -30,7 +31,7 @@ Install react-number-meter with npm
 ## Usage/Examples
 
 ```javascript
-import { RollingMeter, ShiftingMeter } from "react-meter";
+import { RollingMeter, ShiftingMeter } from "react-number-meter";
 
 function App() {
   return (
