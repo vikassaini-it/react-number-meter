@@ -26,7 +26,7 @@ const App = () => {
           <h2>SHIFTING METER</h2>
           <p className="w-50 text-center">
             This is a shifting meter which always shifts in both direction
-            depending upon value, bottom to top
+            depending upon value
           </p>
           <ShiftingMeter
             value={value}

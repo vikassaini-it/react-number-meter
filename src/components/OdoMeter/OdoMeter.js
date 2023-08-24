@@ -23,12 +23,22 @@ export default function OdoMeter({
           parseInt(val, 10)
         );
         const rotationDir = value > previousVal;
-        let totalRotation = 36 * distance;
-        totalRotation +=
-          idx > 0 ? (localRot[idx - 1]["d"] + distance) * 360 : 0;
-        // totalRotation = totalRotation * (rotationDir ? 1 : -1);
-        localRot[idx]["r"] = localRot[idx]["r"] + totalRotation;
-        localRot[idx]["v"] = parseInt(val, 10);
+        if (distance !== 0) {
+          let totalRotation = rotationDir
+            ? 36 * distance
+            : -(360 - 36 * distance);
+          totalRotation +=
+            (idx > 0 ? localRot[idx - 1]["d"] * 360 : 0) *
+            (rotationDir ? 1 : -1);
+          localRot[idx]["r"] = localRot[idx]["r"] + totalRotation;
+          localRot[idx]["v"] = parseInt(val, 10);
+        } else {
+          localRot[idx]["r"] =
+            localRot[idx]["r"] +
+            (rotationDir ? 1 : -1) *
+              (idx > 0 ? localRot[idx - 1]["d"] * 360 : 0);
+        }
+
         localRot[idx]["d"] =
           (distance > 0 ? distance - 1 : 0) +
           (idx > 0 ? localRot[idx - 1]["d"] : 0);
