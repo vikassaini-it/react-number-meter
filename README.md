@@ -24,11 +24,11 @@ Install react-number-meter with npm
 
 ## Screenshots
 
-![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDA5emRpNmZmNXF5cWFxcmZ3aDh2NmRxMWxzMmtnaTlhZnJ6bHFrbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UsYoOqLmlbaMuSqevH/giphy-downsized.gif)
+![](https://media.giphy.com/media/UsYoOqLmlbaMuSqevH/giphy-downsized.gif)
 
-![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXBsZnM1dHg3aGZyeGUxdmxycWp4bGpwdzVteGIzMm9jM2hzc3MxaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/HT5iycLaGQizmRrbQ8/giphy-downsized-large.gif)
+![](https://media.giphy.com/media/HT5iycLaGQizmRrbQ8/giphy-downsized.gif)
 
-![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjloaHFuaGsydG1xZGZvaGR0N2NueXplNzR2cmVuNmJrdHdyaXBndSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/C1SX5fOq7pbyyJNErU/giphy-downsized-large.gif)
+![](https://media.giphy.com/media/C1SX5fOq7pbyyJNErU/giphy-downsized.gif)
 
 ## Usage/Examples
 
