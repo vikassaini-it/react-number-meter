@@ -4,12 +4,13 @@ import styles from "./RollingMeter.css";
 export default function RollingMeter({
   value,
   duration = 1000,
-  size = "3rem",
+  size = "3",
   color = "black",
   fontFamily = "sans-serif",
 }) {
   const [rotVal, setRotVal] = useState([]);
   const [rotValBk, setRotValBk] = useState([]);
+  const [transformOrigin, setTransformOrigin] = useState(`0rem 0rem ${3}rem`);
 
   useEffect(() => {
     setRotVal((prevVal) => {
@@ -30,6 +31,10 @@ export default function RollingMeter({
     });
   }, [value]);
 
+  useEffect(() => {
+    setTransformOrigin(`0rem 0rem ${size + size - size / 3}rem`);
+  }, [size]);
+
   const calculateDistance = (num1, num2) => {
     const distance = (num2 - num1 + 10) % 10;
     return distance;
@@ -38,7 +43,11 @@ export default function RollingMeter({
   return (
     <div
       className={styles["techo-wrap"]}
-      style={{ height: size, fontSize: size, lineHeight: size }}
+      style={{
+        height: `${size}rem`,
+        fontSize: `${size}rem`,
+        lineHeight: `${size}rem`,
+      }}
     >
       {(value + "").split("").map((val, idx) => (
         <React.Fragment key={idx + val}>
@@ -51,11 +60,11 @@ export default function RollingMeter({
               transform: `rotateX( ${
                 (rotVal[idx] ? rotVal[idx]["r"] : 0) * -1
               }deg ) `,
-              transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+              transformOrigin: transformOrigin,
               transitionProperty: `all`,
               transitionDuration: `${duration}ms`,
               position: "relative",
-              marginRight: `calc( ${size} - 1rem )`,
+              marginRight: `${1}ch`,
             }}
           >
             <div
@@ -63,7 +72,7 @@ export default function RollingMeter({
               data-val="0"
               style={{
                 transform: "rotateX(0deg)",
-                transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+                transformOrigin: transformOrigin,
               }}
             >
               0
@@ -73,7 +82,7 @@ export default function RollingMeter({
               data-val="1"
               style={{
                 transform: "rotateX(36deg)",
-                transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+                transformOrigin: transformOrigin,
               }}
             >
               1
@@ -83,7 +92,7 @@ export default function RollingMeter({
               data-val="2"
               style={{
                 transform: "rotateX(72deg)",
-                transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+                transformOrigin: transformOrigin,
               }}
             >
               2
@@ -93,7 +102,7 @@ export default function RollingMeter({
               data-val="3"
               style={{
                 transform: "rotateX(108deg)",
-                transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+                transformOrigin: transformOrigin,
               }}
             >
               3
@@ -103,7 +112,7 @@ export default function RollingMeter({
               data-val="4"
               style={{
                 transform: "rotateX(144deg)",
-                transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+                transformOrigin: transformOrigin,
               }}
             >
               4
@@ -113,7 +122,7 @@ export default function RollingMeter({
               data-val="5"
               style={{
                 transform: "rotateX(180deg)",
-                transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+                transformOrigin: transformOrigin,
               }}
             >
               5
@@ -123,7 +132,7 @@ export default function RollingMeter({
               data-val="6"
               style={{
                 transform: "rotateX(216deg)",
-                transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+                transformOrigin: transformOrigin,
               }}
             >
               6
@@ -133,7 +142,7 @@ export default function RollingMeter({
               data-val="7"
               style={{
                 transform: "rotateX(252deg)",
-                transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+                transformOrigin: transformOrigin,
               }}
             >
               7
@@ -143,7 +152,7 @@ export default function RollingMeter({
               data-val="8"
               style={{
                 transform: "rotateX(288deg)",
-                transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+                transformOrigin: transformOrigin,
               }}
             >
               8
@@ -153,7 +162,7 @@ export default function RollingMeter({
               data-val="9"
               style={{
                 transform: "rotateX(324deg)",
-                transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+                transformOrigin: transformOrigin,
               }}
             >
               9

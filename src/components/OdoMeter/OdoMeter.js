@@ -4,12 +4,15 @@ import styles from "./OdoMeter.css";
 export default function OdoMeter({
   value,
   duration = 1000,
-  size = "3rem",
+  size = "3",
   color = "black",
   fontFamily = "sans-serif",
 }) {
   const [rotVal, setRotVal] = useState([]);
   const [previousVal, setPrevVal] = useState(0);
+  const [transformOrigin, setTransformOrigin] = useState(
+    `0rem 0rem ${size * size - 1}rem`
+  );
 
   useEffect(() => {
     setRotVal((prevVal) => {
@@ -48,6 +51,10 @@ export default function OdoMeter({
     });
   }, [value]);
 
+  useEffect(() => {
+    setTransformOrigin(`0rem 0rem ${size + size - size / 3}rem`);
+  }, [size]);
+
   const calculateDistance = (num1, num2) => {
     const distance = (num2 - num1 + 10) % 10;
     return distance;
@@ -56,7 +63,11 @@ export default function OdoMeter({
   return (
     <div
       className={styles["techo-wrap"]}
-      style={{ height: size, fontSize: size, lineHeight: size }}
+      style={{
+        height: `${size}rem`,
+        fontSize: `${size}rem`,
+        lineHeight: `${size}rem`,
+      }}
     >
       {(value + "").split("").map((val, idx) => (
         <React.Fragment key={idx + val}>
@@ -69,14 +80,10 @@ export default function OdoMeter({
               transform: `rotateX( ${
                 (rotVal[idx] ? rotVal[idx]["r"] : 0) * -1
               }deg ) `,
-              transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+              transformOrigin: transformOrigin,
               transitionProperty: `all`,
               transitionDuration: `${duration}ms`,
-              transitionDelay: `${
-                ((value + "").split("").length - idx) * 50
-              }ms`,
-              position: "relative",
-              marginRight: `calc( ${size} - 1rem )`,
+              marginRight: `${1}ch`,
             }}
           >
             <div
@@ -84,7 +91,7 @@ export default function OdoMeter({
               data-val="0"
               style={{
                 transform: "rotateX(0deg)",
-                transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+                transformOrigin: transformOrigin,
               }}
             >
               0
@@ -94,7 +101,7 @@ export default function OdoMeter({
               data-val="1"
               style={{
                 transform: "rotateX(36deg)",
-                transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+                transformOrigin: transformOrigin,
               }}
             >
               1
@@ -104,7 +111,7 @@ export default function OdoMeter({
               data-val="2"
               style={{
                 transform: "rotateX(72deg)",
-                transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+                transformOrigin: transformOrigin,
               }}
             >
               2
@@ -114,7 +121,7 @@ export default function OdoMeter({
               data-val="3"
               style={{
                 transform: "rotateX(108deg)",
-                transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+                transformOrigin: transformOrigin,
               }}
             >
               3
@@ -124,7 +131,7 @@ export default function OdoMeter({
               data-val="4"
               style={{
                 transform: "rotateX(144deg)",
-                transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+                transformOrigin: transformOrigin,
               }}
             >
               4
@@ -134,7 +141,7 @@ export default function OdoMeter({
               data-val="5"
               style={{
                 transform: "rotateX(180deg)",
-                transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+                transformOrigin: transformOrigin,
               }}
             >
               5
@@ -144,7 +151,7 @@ export default function OdoMeter({
               data-val="6"
               style={{
                 transform: "rotateX(216deg)",
-                transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+                transformOrigin: transformOrigin,
               }}
             >
               6
@@ -154,7 +161,7 @@ export default function OdoMeter({
               data-val="7"
               style={{
                 transform: "rotateX(252deg)",
-                transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+                transformOrigin: transformOrigin,
               }}
             >
               7
@@ -164,7 +171,7 @@ export default function OdoMeter({
               data-val="8"
               style={{
                 transform: "rotateX(288deg)",
-                transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+                transformOrigin: transformOrigin,
               }}
             >
               8
@@ -174,7 +181,7 @@ export default function OdoMeter({
               data-val="9"
               style={{
                 transform: "rotateX(324deg)",
-                transformOrigin: `0rem 0rem calc( ${size} + 2rem )`,
+                transformOrigin: transformOrigin,
               }}
             >
               9
@@ -183,10 +190,9 @@ export default function OdoMeter({
           {/* <div
             style={{
               fontSize: "14px",
-              color: `${rotVal[idx]?.r < rotValBk[idx]?.r ? "red" : "black"}`,
             }}
           >
-            {rotValBk[idx]?.r + ":" + rotVal[idx]?.r}
+            {transformOrigin}
           </div> */}
         </React.Fragment>
       ))}

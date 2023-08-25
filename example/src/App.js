@@ -28,11 +28,7 @@ const App = () => {
             This is a shifting meter which always shifts in both direction
             depending upon value
           </p>
-          <ShiftingMeter
-            value={value}
-            duration={duration}
-            size={`${size}rem`}
-          />
+          <ShiftingMeter value={value} duration={duration} size={size} />
           <code
             className="mt-3 p-3"
             style={{
@@ -45,7 +41,7 @@ const App = () => {
               <ShiftingMeter 
                 value={\`${value}\`}
                 duration={\`${duration}ms\`}
-                size={\`${size}rem\`} 
+                size={\`${size}\`} 
               />
             `}
           </code>
@@ -56,7 +52,7 @@ const App = () => {
             This is a rolling meter which always rolls in one direction, bottom
             to top
           </p>
-          <RollingMeter value={value} duration={duration} size={`${size}rem`} />
+          <RollingMeter value={value} duration={duration} size={size} />
           <code
             className="mt-3 p-3"
             style={{
@@ -69,7 +65,7 @@ const App = () => {
               <RollingMeter 
                 value={\`${value}\`}
                 duration={\`${duration}ms\`}
-                size={\`${size}rem\`} 
+                size={\`${size}\`} 
               />
             `}
           </code>
@@ -79,7 +75,7 @@ const App = () => {
           <p className="w-50 text-center">
             This is a odo meter which rolls like a real odometer
           </p>
-          <OdoMeter value={value} duration={duration} size={`${size}rem`} />
+          <OdoMeter value={value} duration={duration} size={size} />
           <code
             className="mt-3 p-3"
             style={{
@@ -92,7 +88,7 @@ const App = () => {
               <OdoMeter 
                 value={\`${value}\`}
                 duration={\`${duration}ms\`}
-                size={\`${size}rem\`} 
+                size={\`${size}\`} 
               />
             `}
           </code>
