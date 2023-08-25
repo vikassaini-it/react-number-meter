@@ -24,20 +24,41 @@ Install react-number-meter with npm
 
 ## Screenshots
 
-![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2prc3FvZHB3ZGJieDJuc2dzY211dTczaWI4bTZueHRzZGNncXdlOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dQbyic9cGMSMudv0mr/giphy.gif)
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDA5emRpNmZmNXF5cWFxcmZ3aDh2NmRxMWxzMmtnaTlhZnJ6bHFrbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UsYoOqLmlbaMuSqevH/giphy-downsized.gif)
 
-![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTY0aDZoYTUxMWRkbHJxMjNuMnlheG5weXgyZ2l6cHhmemJyN2E0MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RZZOIXUgzGMxXEtdjh/giphy.gif)
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXBsZnM1dHg3aGZyeGUxdmxycWp4bGpwdzVteGIzMm9jM2hzc3MxaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/HT5iycLaGQizmRrbQ8/giphy-downsized-large.gif)
+
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjloaHFuaGsydG1xZGZvaGR0N2NueXplNzR2cmVuNmJrdHdyaXBndSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/C1SX5fOq7pbyyJNErU/giphy-downsized-large.gif)
 
 ## Usage/Examples
 
 ```javascript
-import { RollingMeter, ShiftingMeter } from "react-number-meter";
+import { ShiftingMeter, RollingMeter, OdoMeter } from "react-number-meter";
 
 function App() {
   return (
     <>
-      <ShiftingMeter value={5483343} duration={500} size={`3rem`} />
-      <RollingMeter value={872542} duration={1000} size={`3rem`} />
+      <ShiftingMeter
+        value={5483343}
+        duration={500}
+        size={`3rem`}
+        color={`#000000`}
+        fontFamily={`sans-serif`}
+      />
+      <RollingMeter
+        value={872542}
+        duration={1000}
+        size={`3rem`}
+        color={`#000000`}
+        fontFamily={`sans-serif`}
+      />
+      <OdoMeter
+        value={872542}
+        duration={1000}
+        size={`3rem`}
+        color={`#000000`}
+        fontFamily={`sans-serif`}
+      />
     </>
   );
 }

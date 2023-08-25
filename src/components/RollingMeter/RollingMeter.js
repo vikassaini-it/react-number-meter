@@ -9,13 +9,11 @@ export default function RollingMeter({
   fontFamily = "sans-serif",
 }) {
   const [rotVal, setRotVal] = useState([]);
-  const [rotValBk, setRotValBk] = useState([]);
   const [transformOrigin, setTransformOrigin] = useState(`0rem 0rem ${3}rem`);
 
   useEffect(() => {
     setRotVal((prevVal) => {
       const localRot = JSON.parse(JSON.stringify(prevVal));
-      setRotValBk(JSON.parse(JSON.stringify(prevVal)));
       (value + "").split("").forEach((val, idx) => {
         if (!localRot[idx]) {
           localRot[idx] = { v: 0, r: 0 };
@@ -23,8 +21,7 @@ export default function RollingMeter({
         localRot[idx]["r"] =
           localRot[idx]["r"] +
           36 * calculateDistance(localRot[idx]["v"], parseInt(val, 10));
-        // (((parseInt(val, 10) - localRot[idx]["v"] + 9) % 9) +
-        //   (parseInt(val, 10) < localRot[idx]["v"] ? 1 : 0));
+
         localRot[idx]["v"] = parseInt(val, 10);
       });
       return localRot;

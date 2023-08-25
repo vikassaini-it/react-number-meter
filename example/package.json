@@ -16,6 +16,7 @@
     "@mui/material": "^5.14.5",
     "bootstrap": "^5.3.1",
     "react": "file:../node_modules/react",
+    "react-colorful": "^5.6.1",
     "react-dom": "file:../node_modules/react-dom",
     "react-meter": "file:.."
   },
